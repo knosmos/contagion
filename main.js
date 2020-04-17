@@ -248,10 +248,10 @@ function startScreen(){
         textSize(20);
         text('Viruses have appeared in the interstitial fluid, wreaking havoc on whatever they meet! Direct T-Cells to destroy infected cells ... before the viruses do.\n\nPress, drag, and release to launch t-cells.',w/4+5,h/4+60,w/2);
         if(buttonHovered(w/4,h*5/8,w/2,h/8)){
-            fill(100,100,255);
+            fill(100,255,100);
         }
         else{
-            fill(100,255,100);
+            fill(52, 195, 235);
         }
         rect(w/4,h*5/8,w/2,h/8,0,0,20,20);
         fill(0);
@@ -272,11 +272,11 @@ function endScreen(){
         fill(0);
         textAlign(CENTER,TOP);
         textSize(20);
-        text('Game Over',w/4+5,h/4+10,w/2);
+        text('Game Over',w/4+5,h/4+20,w/2);
         textSize(15);
         text(`The viruses compromised all your cells\nYou lasted ${timeElapsed}ms`,w/4+5,h/4+40,w/2);
         if(buttonHovered(w/4,h*5/8,w/2,h/8)){
-            fill(100,100,255);
+            fill(100,255,100);
             if(mouseIsPressed){
                 reset();
             }
@@ -299,7 +299,7 @@ function winScreen(){
         fill(100,100);
         rect(0,0,w,h);
         fill(255);
-        rect(w/4,h/4,w/2,h/2);
+        rect(w/4,h/4,w/2,h/2,20);
         fill(0);
         textAlign(CENTER,TOP);
         textSize(20);
@@ -307,12 +307,12 @@ function winScreen(){
         textSize(15);
         text(`The immune system prevails!\nYou won in ${timeElapsed}ms\nYou saved ${healthy} cells from premature doom`,w/4+5,h/4+40,w/2);
         if(buttonHovered(w/4,h*5/8,w/2,h/8)){
-            fill(100,100,255);
-        }
-        else{
             fill(100,255,100);
         }
-        rect(w/4,h*5/8,w/2,h/8);
+        else{
+            fill(250, 85, 173);
+        }
+        rect(w/4,h*5/8,w/2,h/8,0,0,20,20);
         fill(0);
         textSize(20);
         text('Play Again',w/4,h*5/8+5,w/2);
@@ -327,10 +327,10 @@ function displayCtrs(){
     textSize(20);
     textAlign(LEFT,TOP)
     text(`time elapsed: ${timeElapsed}`,10,20);
-    text(`healthy: ${healthy}`,10,40);
-    text(`infected: ${infected}`,10,60);
-    text(`dead: ${dead}`,10,80);
-    text(`viruses: ${cviruses}`,10,100);
+    text(`healthy: ${healthy}`,10,50);
+    text(`infected: ${infected}`,10,80);
+    text(`dead: ${dead}`,10,110);
+    text(`viruses: ${cviruses}`,10,140);
     textAlign(CENTER,CENTER);
     textSize(30);
     text('contagion',w/2,30);
@@ -345,6 +345,7 @@ function setup(){
     }
     createCanvas(w,h);
     noStroke();
+    textFont('Open Sans');
 }
 
 function mousePressed(){
