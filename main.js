@@ -240,11 +240,11 @@ function startScreen(){
         fill(100);
         rect(0,0,w,h);
         fill(255);
-        rect(w/4,h/4,w/2,h/2);
+        rect(w/4,h/4,w/2,h/2,20);
         fill(0);
         textAlign(CENTER,TOP);
         textSize(30);
-        text('antigen',w/4+5,h/4+10,w/2);
+        text('Contagion',w/4+5,h/4+10,w/2);
         textSize(20);
         text('Viruses have appeared in the interstitial fluid, wreaking havoc on whatever they meet! Direct T-Cells to destroy infected cells ... before the viruses do.\n\nPress, drag, and release to launch t-cells.',w/4+5,h/4+60,w/2);
         if(buttonHovered(w/4,h*5/8,w/2,h/8)){
@@ -253,7 +253,7 @@ function startScreen(){
         else{
             fill(100,255,100);
         }
-        rect(w/4,h*5/8,w/2,h/8);
+        rect(w/4,h*5/8,w/2,h/8,0,0,20,20);
         fill(0);
         textSize(20);
         text('Start!',w/4,h*11/16-10,w/2);
@@ -268,26 +268,26 @@ function endScreen(){
         fill(100,100);
         rect(0,0,w,h);
         fill(255);
-        rect(w/4,h/4,w/2,h/2);
+        rect(w/4,h/4,w/2,h/2,20);
         fill(0);
         textAlign(CENTER,TOP);
         textSize(20);
         text('Game Over',w/4+5,h/4+10,w/2);
         textSize(15);
-        text(`The Antigens compromised all your cells\nYou lasted ${timeElapsed}ms`,w/4+5,h/4+40,w/2);
+        text(`The viruses compromised all your cells\nYou lasted ${timeElapsed}ms`,w/4+5,h/4+40,w/2);
         if(buttonHovered(w/4,h*5/8,w/2,h/8)){
             fill(100,100,255);
+            if(mouseIsPressed){
+                reset();
+            }
         }
         else{
-            fill(100,255,100);
+            fill(52, 195, 235);
         }
-        rect(w/4,h*5/8,w/2,h/8);
+        rect(w/4,h*5/8,w/2,h/8,0,0,20,20);
         fill(0);
         textSize(20);
         text('Play Again',w/4,h*5/8+5,w/2);
-        if(buttonPressed(w/4,h*5/8,w/2,h/8)){
-            reset();
-        }
     }
 }
 
@@ -324,7 +324,7 @@ function winScreen(){
 
 function displayCtrs(){
     fill(0);
-    textSize(10);
+    textSize(20);
     textAlign(LEFT,TOP)
     text(`time elapsed: ${timeElapsed}`,10,20);
     text(`healthy: ${healthy}`,10,40);
@@ -333,7 +333,7 @@ function displayCtrs(){
     text(`viruses: ${cviruses}`,10,100);
     textAlign(CENTER,CENTER);
     textSize(30);
-    text('antigen',w/2,30);
+    text('contagion',w/2,30);
 }
 
 function setup(){
