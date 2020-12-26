@@ -274,7 +274,7 @@ function endScreen(){
         textSize(20);
         text('Game Over',w/4+5,h/4+20,w/2);
         textSize(15);
-        text(`The viruses compromised all your cells\nYou lasted ${timeElapsed}ms`,w/4+5,h/4+40,w/2);
+        text(`The viruses compromised all your cells\nYou lasted ${timeElapsed*33}ms`,w/4+5,h/4+40,w/2);
         if(buttonHovered(w/4,h*5/8,w/2,h/8)){
             fill(100,255,100);
             if(mouseIsPressed){
@@ -292,7 +292,7 @@ function endScreen(){
 }
 
 function winScreen(){
-    if(cviruses===0&&infected===0){
+    if(cviruses===0&&infected===0&&healthy>0){
         if(win===false){
             win=true;
         }
@@ -305,7 +305,7 @@ function winScreen(){
         textSize(20);
         text('You Win!',w/4+5,h/4+10,w/2);
         textSize(15);
-        text(`The immune system prevails!\nYou won in ${timeElapsed}ms\nYou saved ${healthy} cells from premature doom`,w/4+5,h/4+40,w/2);
+        text(`The immune system prevails!\nYou won in ${timeElapsed*33}ms\nYou saved ${healthy} cells from premature doom`,w/4+5,h/4+40,w/2);
         if(buttonHovered(w/4,h*5/8,w/2,h/8)){
             fill(100,255,100);
         }
@@ -326,7 +326,7 @@ function displayCtrs(){
     fill(0);
     textSize(20);
     textAlign(LEFT,TOP)
-    text(`time elapsed: ${timeElapsed}`,10,20);
+    text(`time elapsed: ${timeElapsed*33}ms`,10,20);
     text(`healthy: ${healthy}`,10,50);
     text(`infected: ${infected}`,10,80);
     text(`dead: ${dead}`,10,110);
@@ -346,7 +346,7 @@ function setup(){
     createCanvas(w,h);
     noStroke();
     textFont('Open Sans');
-    frameRate(20);
+    frameRate(30);
 }
 
 function mousePressed(){
