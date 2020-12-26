@@ -346,6 +346,7 @@ function setup(){
     createCanvas(w,h);
     noStroke();
     textFont('Open Sans');
+    frameRate(20);
 }
 
 function mousePressed(){
