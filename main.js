@@ -98,7 +98,7 @@ class cell{
                 for(let nv=0;nv<6;nv++){
                     viruses.push(new virus(randint(this.pos[0]-this.size/2,this.pos[0]+this.size/2),randint(this.pos[1]-this.size/2,this.pos[1]+this.size/2)));
                 }
-                cviruses+=5;
+                cviruses+=6;
                 infected-=1;
                 dead+=1;
                 return true;
