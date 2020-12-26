@@ -401,7 +401,7 @@ function draw(){
         if(healthy>0&&win===false){
             timeElapsed+=1;
         }
-        if(timeElapsed%200===0&&cviruses!=0&&infected!=0){
+        if(timeElapsed%60===0&&cviruses!=0&&infected!=0){
             viruses.push(new virus(randint(0,w),randint(0,h)));
             cviruses+=1;
         }
