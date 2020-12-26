@@ -90,12 +90,12 @@ class cell{
     }
     suicide(){
         if(this.infected){
-            if(this.suicideCtr>=50){
+            if(this.suicideCtr>=30){
                 this.dir[0]*=-1;
                 this.pos[0]+=this.dir[0]*5;
             }
             if(this.suicideCtr>=80){
-                for(let nv=0;nv<5;nv++){
+                for(let nv=0;nv<6;nv++){
                     viruses.push(new virus(randint(this.pos[0]-this.size/2,this.pos[0]+this.size/2),randint(this.pos[1]-this.size/2,this.pos[1]+this.size/2)));
                 }
                 cviruses+=5;
@@ -237,7 +237,7 @@ function tCellMaker(){
 
 function startScreen(){
     if(start){
-        fill(100);
+        fill(200);
         rect(0,0,w,h);
         fill(255);
         rect(w/4,h/4,w/2,h/2,20);
@@ -265,7 +265,7 @@ function startScreen(){
 
 function endScreen(){
     if(healthy===0){
-        fill(100,100);
+        fill(200,100);
         rect(0,0,w,h);
         fill(255);
         rect(w/4,h/4,w/2,h/2,20);
@@ -296,7 +296,7 @@ function winScreen(){
         if(win===false){
             win=true;
         }
-        fill(100,100);
+        fill(200,100);
         rect(0,0,w,h);
         fill(255);
         rect(w/4,h/4,w/2,h/2,20);
